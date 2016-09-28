@@ -2,13 +2,12 @@
 
 quiet=$1
 
-if [ -d "$HOME/Dropbox/vim/autoload" ]; then
-    cd "$HOME/Dropbox/vim/autoload"
-    curl -O https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+if [ -d "$HOME/.vim/autoload" ]; then
+    curl -LSso "$HOME/.vim/autoload/pathogen.vim" https://tpo.pe/pathogen.vim
 fi
 
-if [ -d "$HOME/Dropbox/vim/bundle" ]; then
-    for bundle in "$HOME/Dropbox/vim/bundle/"*
+if [ -d "$HOME/.vim/bundle" ]; then
+    for bundle in "$HOME/.vim/bundle/"*
     do
         if [ -d "$bundle/.git" ]; then
             if [ "$quiet" != "-q" ]; then
